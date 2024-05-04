@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+hr {
+    width: 500px;
+}
+
+#title {
+    color: lightseagreen;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#board {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    /* Box */
+    border: 2px solid lightgray;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* Text */
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Animation */
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.correct {
+    background-color: lightseagreen;
+    color: white;
+    border-color: white;
+}
+
+.present {
+    background-color: lightblue;
+    color: white;
+    border-color: white;
+}
+
+.absent {
+    background-color: #787C7E;
+    color: white;
+    border-color:white;
+}
+
+
+.keyboard-row {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key-tile, .enter-key-tile {
+    width: 36px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid lightgray;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Animation */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.key-tile:hover, .enter-key-tile:hover {
+    background-color: #e6e6e6; /* Darken background color on hover */
+}
+
+/* Add more CSS animations */
+.fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.key-press {
+    animation: key-press 0.2s ease-out;
+}
+
+@keyframes key-press {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.row-advance {
+    animation: row-advance 0.5s ease-out;
+}
+
+@keyframes row-advance {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+.game-over {
+    animation: game-over 1s ease-out;
+}
+
+@keyframes game-over {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.letter-check {
+    animation: letter-check 0.5s ease-out;
+}
+
+@keyframes letter-check {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Slow fade-in animation */
+.slow-fade-in {
+    animation: slow-fade-in 1s ease-out;
+}
+
+@keyframes slow-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
